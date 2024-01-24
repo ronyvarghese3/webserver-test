@@ -1,5 +1,10 @@
 pipeline {
-    agent any      // Specify a Jenkins agent with Docker installed
+    agent {
+        docker {
+            image 'jenkins/inbound-agent:latest'
+            label 'docker-slave'
+        }
+    }      // Specify a Jenkins agent with Docker installed
     
     environment {
         DOCKER_IMAGE_NAME = 'webserver-test:latest'
