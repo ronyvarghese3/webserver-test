@@ -9,3 +9,5 @@ EXPOSE 80
 
 #To prevent nginx from self-demonizing and to run in foreground.
 CMD ["nginx", "-g","daemon off;"]
+
+USER nginx
