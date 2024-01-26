@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = 'webserver-test"
+        DOCKER_IMAGE_NAME = 'webserver-test'
         DOCKER_REGISTRY_URL = 'ronyvarghese3'
         GITHUB_REPO_URL = 'https://github.com/ronyvarghese3/webserver-test.git'
     }
