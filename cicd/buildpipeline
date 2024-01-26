@@ -27,7 +27,7 @@ pipeline {
                 script {
                     // Build Docker image
                    // withDockerContainer('jenkins/inbound-agent:latest') {
-                        docker build -t $DOCKER_IMAGE_NAME
+                        sh "docker build -t $DOCKER_IMAGE_NAME"
                    // }
                 }
             }
