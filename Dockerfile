@@ -9,5 +9,6 @@ EXPOSE 8001
 
 RUN chown -R 1015790001:root /var/cache/nginx
 RUN sed -i 's/nginx;/1015790001;/g' /etc/nginx/nginx.conf
+RUN sed -i 's/80;/8001;/g' /etc/nginx/conf.d/default.conf
 #To prevent nginx from self-demonizing and to run in foreground.
 CMD ["nginx", "-g","daemon off;"]
