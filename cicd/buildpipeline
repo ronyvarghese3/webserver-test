@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'jenkins/inbound-agent:latest'
+            label 'docker-slave'
         }
     }      // Specify a Jenkins agent with Docker installed
     
