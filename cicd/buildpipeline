@@ -17,9 +17,6 @@ pipeline {
                 script {
                     // Clone the repository
                     //git branch: 'main', credentialsId: 'githubcred', url: GITHUB_REPO_URL
-                    withCredentials([usernamePassword(credentialsId: 'githubcred', passwordVariable: 'password', usernameVariable: 'username')]) {
-                    git 
-                    }
                 }
             }
         }
