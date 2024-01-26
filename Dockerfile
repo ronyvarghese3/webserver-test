@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copy the custom hellodevops.html to the Nginx document root
-COPY hellodevops.html /usr/share/nginx/html/hellodevops.html
+COPY source/html/* /usr/share/nginx/html/
 
 #Port in which to expose, this is optional since while running docker we can mention port then.
 EXPOSE 8001
