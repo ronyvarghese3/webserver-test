@@ -9,6 +9,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'webserver-test:latest'
         DOCKER_REGISTRY_URL = 'ronyvarghese3'
         GITHUB_REPO_URL = 'https://github.com/ronyvarghese3/webserver-test.git'
+        HOME = "${env.WORKSPACE}"
     }
 
     stages {
