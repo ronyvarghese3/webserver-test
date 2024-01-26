@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Webserver Test</title>
+</head>
+<body>
+    <h1 id="greeting">Hello DevOps NaaS Rony Varghese </h1>
+    <p id="date"></p>
+
+    <script>
+        // Get the current date
+        var currentDate = new Date();
+        
+        // Format the date as a string
+        var dateString = currentDate.toDateString();
+
+        // Display the greeting and date on the webpage
+        document.getElementById("date").innerHTML = "Today is: " + dateString;
+    </script>
+</body>
+</html>
