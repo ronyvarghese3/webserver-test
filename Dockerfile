@@ -8,5 +8,6 @@ COPY source/html /usr/share/nginx/html
 EXPOSE 80
 
 RUN chown -R 1015790001:root /var/cache/nginx
+RUN sed -i 's/nginx;/1015790001;/g' /etc/nginx/nginx.conf
 #To prevent nginx from self-demonizing and to run in foreground.
 CMD ["nginx", "-g","daemon off;"]
