@@ -21,7 +21,9 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                        sh "docker build -t $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} ."
+                    sh "docker build --platform=linux/arm64 -t $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} ."
+                    sh "docker build --platform=linux/arm64 -t $DOCKER_IMAGE_NAME-arm64:${env.BUILD_NUMBER} ."
+                    sh "docker build --platform=linux/amd64 -t $DOCKER_IMAGE_NAME-amd64:${env.BUILD_NUMBER} ."
                 }
             }
         }
@@ -41,9 +43,13 @@ pipeline {
                 script {
                     // Tag the Docker image
                     sh "docker tag $DOCKER_IMAGE_NAME $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:${env.BUILD_NUMBER}"
+                    sh "docker tag $DOCKER_IMAGE_NAME-arm64:${env.BUILD_NUMBER} $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME-arm64:${env.BUILD_NUMBER}"
+                    sh "docker tag $DOCKER_IMAGE_NAME-amd64:${env.BUILD_NUMBER} $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME-amd64:${env.BUILD_NUMBER}"
 
                     // Push the Docker image to the registry
                     sh "docker push $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:${env.BUILD_NUMBER}"
+                    sh "docker push DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME-arm64:${env.BUILD_NUMBER}"
+                    sh "docker push $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME-amd64:${env.BUILD_NUMBER}"
                 }
             }
         }
