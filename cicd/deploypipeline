@@ -1,4 +1,8 @@
 node {
+  stage('test'){
+    sh "echo inside and ls -ltr"
+  }
+
   stage('Openshift login') {
             openshift.withCluster('sandbox'){
               def token_spaced = openshift.raw("whoami -t")
