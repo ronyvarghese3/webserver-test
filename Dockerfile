@@ -7,6 +7,6 @@ COPY source/html /usr/share/nginx/html
 #Port in which to expose, this is optional since while running docker we can mention port then.
 EXPOSE 80
 
-RUN chown -R 1015790001:root /var/cache/nginx/client_temp
+RUN chown -R 1015790001:root /var/cache/nginx
 #To prevent nginx from self-demonizing and to run in foreground.
 CMD ["nginx", "-g","daemon off;"]
