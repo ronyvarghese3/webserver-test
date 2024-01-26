@@ -26,6 +26,16 @@ pipeline {
             }
         }
 
+        stage('Docker Hub login') {
+            steps {
+                scripts {
+                    withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'password', usernameVariable: 'username')]) {
+                        sh "docker login -u $username -p $password"
+                    }
+                }
+            }
+        }
+
         stage('Push Docker Image to Registry') {
             steps {
                 script {
