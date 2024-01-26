@@ -5,7 +5,7 @@ FROM nginx:alpine
 COPY source/html /usr/share/nginx/html
 
 #Port in which to expose, this is optional since while running docker we can mention port then.
-#EXPOSE 80
+EXPOSE 8001
 
 RUN chown -R 1015790001:root /var/cache/nginx
 RUN sed -i 's/nginx;/1015790001;/g' /etc/nginx/nginx.conf
