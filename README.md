@@ -26,7 +26,7 @@ The repo consist of 3 branches:
         b)dockerhub: containing scripts based on build and deploy into docker.  
         c)openshift: containing scripts based on build and deploy into openshift cluster.  
  
-## Deployment/Project execution steps
+### Deployment/Project execution steps
 1)Clone the required branch(dockerhub\openshift) of this repo to a local workspace.  
 2)To build the image you can chose any of below options:  
         a) You can directly run docker build using the Dockerfile in the root folder of this repo.  
@@ -39,6 +39,7 @@ The repo consist of 3 branches:
                 - Run this pipeline and image will be pushed to your openshift cluster.  
                 - Currently the values are hardcoded, based on your need the value of openshift cluster and image url can be changed.  
 4)Once deployment is completed you will be able to access the webpage by accessing URL in below format:  
+
  ```shell
 http://<localhost\clusterurl>:<port>\hellodevops.html
 ```
