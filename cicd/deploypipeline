@@ -15,7 +15,7 @@ node {
   }
 
   stage('Deploying into Openshift') {
-              sh "oc process -f deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
+              sh "oc process -f ./configuration/deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
             }
   }
 
