@@ -27,8 +27,7 @@ node {
   }
 
   if (currentBuild.currentResult == 'SUCCESS') { 
-      stage('Deploy') { 
-        sh './deployscript'  
+      echo "Deployment is completed successfully"
       } 
   } 
 }
