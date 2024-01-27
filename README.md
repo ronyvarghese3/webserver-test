@@ -21,7 +21,7 @@ Repository is structured as mentioned below:
 4)Dockerfile - contains required steps to build docker image.  
 
 ### Branching details
-The repo consist of 3 branches:
+The repo consist of 3 branches:  
         a)Main: the default branch.  
         b)dockerhub: containing scripts based on build and deploy into docker.  
         c)openshift: containing scripts based on build and deploy into openshift cluster.  
