@@ -16,7 +16,7 @@ node {
   }
 
   stage('Code checkout'){
-    sh "git pull https://github.com/ronyvarghese3/webserver-test.git"
+    sh "git checkout main"
   }
 
   stage('Deploying into Openshift') {
