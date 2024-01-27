@@ -4,11 +4,13 @@ This repository contains a basic HTML page that can be built in a Docker environ
 
 ## Pre-requisite
 
-Local docker environment.  
-Up and running Jenkins instance.  
-Up and running Openshift cluster.  
+1)Local docker environment.  
+2)Up and running Jenkins instance.  
+3)Up and running Openshift cluster.  
 
 ### Folder Structure
+
+Repository is structured as mentioned below:
 1) source folder - Contains the required HTML pages and supporting files.  
 2) cicd - Contains:  
         a) The buildpipeline to run docker build and to upload the docker image to git repository.  
@@ -16,6 +18,7 @@ Up and running Openshift cluster.
 3) configuration - contains the deployment yaml for openshift deployment.  
 4)Dockerfile - contains required steps to build docker image.  
 
+### Branching details
 The repo consist of 3 branches:
  a)Main: the default branch.  
  b)dockerhub: containing scripts based on build and deploy into docker.  
