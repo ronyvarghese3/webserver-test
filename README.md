@@ -2,52 +2,12 @@
 
 This repository contains a basic HTML page that can be built in a Docker environment and run inside a Docker or Openshift container.
 
-+-------------------------+      +-------------------------+       +-----------------------------+
-|   create Git Repository |      |   Create Dockerfile     |       |    Run Docker build using |
-|                         |      |                         |       |    Jenkins                |
-+------------+------------+      +-------------+-----------+       +--------------+------------+
-             |                                 |                                 |
-             v                                 v                                 v
-+-------------------------+      +-------------------------+       +-----------------------------+
-|   Git Clone Repository  |      |   Script Dockerfile     |       |   Docker Image uploaded   |
-|                         |      |                         |       |   to dockerhub            |
-|                         |      |                         |       |                           |
-+------------+------------+      +-------------+-----------+       +--------------+------------+
-             |                                 |                                 |
-             v                                 v                                 v
-+-------------------------+      +-------------------------+       +-----------------------------+
-|   Develop HTML Page,    |      |   Dockerfile commit to  |       |   Docker Image Available   |
-|   CICD pipelines,       |      |   github repo           |       |                           |
-|   Configurations        |      |                         |       |                           |
-+------------+------------+      +-------------+-----------+       +--------------+------------+
-             |                                 |                                 |
-             v                                 v                                 v
-+-------------------------+      +-------------------------+       +-----------------------------+
-|   Commit Changes        |      | Script build and deploy |       |   Docker Image Pulled     |
-|                         |      |  pipeline               |       |   on Target Machine       |
-|                         |      |                         |       |                           |
-+------------+------------+      +-------------+-----------+       +--------------+------------+
-             |                                 |                                 |
-             v                                 v                                 v
-+-------------------------+      +-------------------------+       +-----------------------------+
-| Push Changes to Git     |      |   Commit pipelines to   |       |   Access HelloWorld Page  |
-| Repository              |      |   github repo           |       |                           |
-|                         |      |                         |       |                           |
-+-------------------------+      +-------------------------+       +-----------------------------+
-             |                                                         |
-             v                                                         v
-+-------------------------+                                       +-----------------------------+
-|    End (Successful)     |                                       |      End (Hello World)      |
-|                         |                                       |                             |
-+-------------------------+                                       +-----------------------------+
-
-
 ## Pre-requisite
 
 1)Local docker environment.  
 2)Up and running Jenkins instance.  
 3)Up and running Openshift cluster.  
-
+![alt text](./documents/prerequisite.png)
 ### Folder Structure
 
 Repository is structured as mentioned below:
