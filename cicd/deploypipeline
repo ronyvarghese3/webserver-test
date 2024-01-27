@@ -16,7 +16,8 @@ node {
   }
 
   stage('Code checkout'){
-    sh "cd webserver-test; git checkout main"
+    //sh "cd webserver-test; git checkout main"
+    git branch: 'main', credentialsId: 'githubcred', url: GITHUB_REPO_URL
   }
 
   stage('Deploying into Openshift') {
