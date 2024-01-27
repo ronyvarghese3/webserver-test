@@ -7,7 +7,7 @@ This repository contains a basic HTML page that can be built in a Docker environ
 1)Local docker environment.  
 2)Up and running Jenkins instance.  
 3)Up and running Openshift cluster.  
-![alt text](./documents/prerequisite.png)
+![alt text](./documents/PreRequisite.png)
 ### Folder Structure
 
 Repository is structured as mentioned below:
