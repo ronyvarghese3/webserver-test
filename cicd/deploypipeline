@@ -14,11 +14,6 @@ ode {
       error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
     }
   }
-    
-  stage('Clone Repository'){ 
-    // Clone the repository
-    git branch: 'main', url: 'https://github.com/ronyvarghese3/webserver-test.git'
-  }
 
   stage('Deploying into Openshift') {
     sh "pwd"
