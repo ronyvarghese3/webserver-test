@@ -6,11 +6,11 @@ node {
     ]),
   ])
 
-//  def IMAGE = "${params.image_source}"
-//  def NAMESPACE = "${params.namespace}"
+  def IMAGE = "${params.image_source}"
+  def NAMESPACE = "${params.namespace}"
 
   stage('verification'){
-    if ( ${params.namespace} != 'ronyvarghese3-dev' ){
+    if (NAMESPACE != 'ronyvarghese3-dev'){
       error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
     }
   }
