@@ -32,12 +32,18 @@ The repo consist of 3 branches:
         a) You can directly run docker build using the Dockerfile in the root folder of this repo.  
         b) Create a job in jenkins and configure the respective branch of this repo and buildpipeline present under the cicd folder.  
                 -- Run this pipeline in a docker based workspace. The image will be built and also uploaded into dockerhub.  
-                -- Currently the values are hardcoded, based on your need the value of githubURL\dockerhubRepo can be changed.  
+                -- Currently the values are hardcoded, based on your need the value of githubURL\dockerhubRepo can be changed.
+
+![alt text](./documents/CI.png)
+   
 3) To deploy the image you can choose any of below options:  
         * You can use docker run command and launch the image in local docker environment.  
         * Create a job in jenkins and configure the respective branch and the deploypipeline from cicd folder.  
                 - Run this pipeline and image will be pushed to your openshift cluster.  
-                - Currently the values are hardcoded, based on your need the value of openshift cluster and image url can be changed.  
+                - Currently the values are hardcoded, based on your need the value of openshift cluster and image url can be changed.
+
+![alt text](./documents/cd.png)
+   
 4) Once deployment is completed you will be able to access the webpage by accessing URL in below format:  
 
  ```shell
