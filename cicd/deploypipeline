@@ -5,11 +5,12 @@ node {
       string(name: 'namespace', defaultValue: 'ronyvarghese3-dev', description: 'namespace to which app is to be deployed',)
     ]),
   ])
-  def image_source = "${params.image_source}"
-  def target_namespace = "${params.target_namespace}"
+
+  def IMAGE = "${params.image_source}"
+  def NAMESPACE = "${params.namespace}"
 
   stage('verification'){
-    if ( $target_namespace != 'ronyvarghese3-dev' ){
+    if ( $NAMESPACE != 'ronyvarghese3-dev' ){
       error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
     }
   }
