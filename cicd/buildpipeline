@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    sh "docker build --platform=linux/arm64 -t $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} ."
+                    sh "docker build -t $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} ."
                     sh "docker build --platform=linux/arm64 -t $DOCKER_IMAGE_NAME-arm64:${env.BUILD_NUMBER} ."
                     sh "docker build --platform=linux/amd64 -t $DOCKER_IMAGE_NAME-amd64:${env.BUILD_NUMBER} ."
                 }
