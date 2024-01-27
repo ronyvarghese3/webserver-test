@@ -1,8 +1,8 @@
 node {
   properties([
     parameters([
-      string(name: 'image_source', defaultValue: '', description: 'source image URL including version',),
-      string(name: 'target_namespace', defaultValue: '', description: 'namespace to which app is to be deployed',)
+      string(name: 'image_source', defaultValue: 'ronyvarghese3/webserver-test-amd64:21', description: 'source image URL including version',),
+      string(name: 'target_namespace', defaultValue: 'ronyvarghese3-dev', description: 'namespace to which app is to be deployed',)
     ])
   ])
   def image_source = "${params.image_source}"
