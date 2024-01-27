@@ -24,7 +24,7 @@ node {
     sh "pwd"
     sh "ls -ltr"
     sh "cd webserver-test"
-    sh "oc process -f ${WORKSPACE}/webserver-test/configuration/deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
+    sh "oc process -f ${WORKSPACE}/configuration/deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
   }
 
   if (currentBuild.currentResult == 'SUCCESS') { 
