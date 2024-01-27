@@ -6,8 +6,8 @@ node {
     ]),
   ])
 
-  def IMAGE = "${params.image_source}"
-  def NAMESPACE = "${params.namespace}"
+//  def IMAGE = "${params.image_source}"
+//  def NAMESPACE = "${params.namespace}"
 
   stage('verification'){
     if ( $NAMESPACE != 'ronyvarghese3-dev' ){
