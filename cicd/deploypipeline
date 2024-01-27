@@ -1,4 +1,4 @@
-ode {
+node {
   properties([
     parameters([
       string(name: 'image_source', defaultValue: 'ronyvarghese3/webserver-test-amd64:21', description: 'source image URL including version',),
