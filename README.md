@@ -8,7 +8,7 @@ This repository contains a basic HTML page that can be built in a Docker environ
 
 1)Local docker environment.  
 2)Up and running Jenkins instance.  
-3)Up and running Openshift cluster.  
+3)Up and running Openshift cluster(Can be local or a sandbox cluster).  
 
 ### Folder Structure
 
