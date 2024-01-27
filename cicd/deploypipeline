@@ -15,6 +15,10 @@ node {
     }
   }
 
+  stage('Code checkout'){
+    git branch: 'main', url: https://github.com/ronyvarghese3/webserver-test.git
+  }
+
   stage('Deploying into Openshift') {
     sh "pwd"
     sh "ls -ltr"
