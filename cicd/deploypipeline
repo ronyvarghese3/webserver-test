@@ -16,14 +16,14 @@ node {
   }
 
   stage('Code checkout'){
-    sh "git clone -b main https://github.com/ronyvarghese3/webserver-test.git"
+    sh "git pull https://github.com/ronyvarghese3/webserver-test.git"
   }
 
   stage('Deploying into Openshift') {
     sh "pwd"
     sh "ls -ltr"
     sh "cd webserver-test"
-    sh "oc process -f ./configuration/deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
+    sh "oc process -f ${WORKSPACE}/webserver-test/configuration/deployment.yaml -p image_source=${image_source} -n ronyvarghese3-dev | oc apply -f - -n ronyvarghese3-dev"
   }
 
   if (currentBuild.currentResult == 'SUCCESS') { 
