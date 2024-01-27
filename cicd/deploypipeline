@@ -10,7 +10,7 @@ node {
 //  def NAMESPACE = "${params.namespace}"
 
   stage('verification'){
-    if ( $NAMESPACE != 'ronyvarghese3-dev' ){
+    if ( ${params.namespace} != 'ronyvarghese3-dev' ){
       error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
     }
   }
