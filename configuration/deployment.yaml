@@ -1,53 +1,53 @@
 apiVersion: v1
 kind: Template
 parameters:
--name: image_source
+- name: image_source
 metadata:
   name: webserver-final
   labels:
     app: webserver
 objects:
--apiVersion: v1
-kind: DeploymentConfig
-metadata:
-  name: webserver-final
-  namespace: ronyvarghese3-dev
-  labels:
-    app: webserver
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    name: webserver-final
+    namespace: ronyvarghese3-dev
+    labels:
       app: webserver
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         app: webserver
-    spec:
-      containers:
-        - name: container
-          image: ${image_source}
-          ports:
-            - containerPort: 8001
-              protocol: TCP
-          resources: {}
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities: {}
-            privileged: false
-            runAsUser: 1015790001
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-      dnsPolicy: ClusterFirst
-      securityContext: {}
-      schedulerName: default-scheduler
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
-  revisionHistoryLimit: 10
-  progressDeadlineSeconds: 600
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: webserver
+      spec:
+        containers:
+          - name: container
+            image: ${image_source}
+            ports:
+              - containerPort: 8001
+                protocol: TCP
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            imagePullPolicy: IfNotPresent
+            securityContext:
+              capabilities: {}
+              privileged: false
+              runAsUser: 1015790001
+        restartPolicy: Always
+        terminationGracePeriodSeconds: 30
+        dnsPolicy: ClusterFirst
+        securityContext: {}
+        schedulerName: default-scheduler
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 25%
+        maxSurge: 25%
+    revisionHistoryLimit: 10
+    progressDeadlineSeconds: 600
