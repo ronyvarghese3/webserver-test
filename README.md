@@ -4,7 +4,7 @@ This repository contains a basic HTML page that can be built in a Docker environ
 
 ## Pre-requisite
 
-![alt text](./documents/PreRequisite.png)
+![alt text](./documents/preRequisite.png)
 
 1)Local docker environment.  
 2)Up and running Jenkins instance.  
