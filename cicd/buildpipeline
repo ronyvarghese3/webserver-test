@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = 'my-webserver'
+        DOCKER_IMAGE_NAME = 'my-webserver-dockerhub'
         DOCKER_REGISTRY_URL = 'ronyvarghese3'
         GITHUB_REPO_URL = 'https://github.com/ronyvarghese3/webserver-test.git'
     }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    sh "docker build -t $DOCKER_IMAGE_NAME:latest ."
+                    sh "docker build -t $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} ."
                 }
             }
         }
@@ -40,11 +40,10 @@ pipeline {
             steps {
                 script {
                     // Tag the Docker image
-                    sh "docker tag $DOCKER_IMAGE_NAME $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:latest"
+                    sh "docker tag $DOCKER_IMAGE_NAME:${env.BUILD_NUMBER} $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:${env.BUILD_NUMBER}"
                     
                     // Push the Docker image to the registry
-                    sh "docker push $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:latest"
-    
+                    sh "docker push $DOCKER_REGISTRY_URL/$DOCKER_IMAGE_NAME:${env.BUILD_NUMBER}"
                 }
             }
         }
