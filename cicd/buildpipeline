@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Clone the repository
-                    git branch: 'main', credentialsId: 'githubcred', url: GITHUB_REPO_URL
+                    git branch: 'openshift', credentialsId: 'githubcred', url: GITHUB_REPO_URL
                 }
             }
         }
