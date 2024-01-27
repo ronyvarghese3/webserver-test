@@ -16,8 +16,7 @@ node {
   }
 
   stage('Code checkout'){
-    sh "cd webserver-test"
-    sh "git checkout main"
+    sh "cd webserver-test; git checkout main"
   }
 
   stage('Deploying into Openshift') {
