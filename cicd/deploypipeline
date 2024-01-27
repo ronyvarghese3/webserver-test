@@ -1,6 +1,17 @@
 node {
-  stage('test'){
-    sh "echo inside and ls -ltr"
+  properties([
+    parameters([
+      string(name: 'image_source', defaultValue: '', description: 'source image URL including version',)
+      string(name: 'target_namespace', defaultValue: '', description: 'namespace to which app is to be deployed',)
+    ])
+  ])
+  def image_source = "${params.image_source}"
+  def target_namespace = "${params.target_namespace}"
+
+  stage('verification'){
+    if ( $target_namespace != 'ronyvarghese3-dev' ){
+      error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
+    }
   }
 
   stage('Deploying into Openshift') {
