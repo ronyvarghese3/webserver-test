@@ -10,7 +10,7 @@ objects:
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
-    name: webserver-final
+    name: my-webserver
     namespace: ronyvarghese3-dev
     labels:
       app: webserver
