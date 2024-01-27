@@ -28,6 +28,5 @@ node {
 
   if (currentBuild.currentResult == 'SUCCESS') { 
       echo "Deployment is completed successfully"
-      } 
-  } 
+      }  
 }
