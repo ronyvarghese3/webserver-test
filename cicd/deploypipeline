@@ -3,23 +3,11 @@ node {
     sh "echo inside and ls -ltr"
   }
 
-  stage('Openshift login') {
-            openshift.withCluster('sandbox'){
-              def token_spaced = openshift.raw("whoami -t")
-              def token = token.out.trim()
-              def server_url_spaced = openshift.raw("whoami --show-server")
-              def server_url = server_url.out.trim()
-              sh "oc login -s ${server_url} --token=${token} --insecure-skip-tls-verify"
+  stage('Deploying into Openshift') {
+              sh "oc apply -f deployment.yaml -n ronyvarghese3-dev "
             }
   }
 
-  stage('deploy image') {
-    openshift.withCluster('sandbox'){
-      sh "oc project ronyvarghese3-dev"
-      sh "oc get all"
-    }
-  }
-  
   if (currentBuild.currentResult == 'SUCCESS') { 
       stage('Deploy') { 
         sh './deployscript'  
