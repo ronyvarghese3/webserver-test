@@ -6,6 +6,7 @@ metadata:
   name: webserver-final
   labels:
     app: webserver
+objects:
 -apiVersion: v1
 kind: Deployment
 metadata:
