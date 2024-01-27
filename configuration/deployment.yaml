@@ -8,7 +8,7 @@ metadata:
     app: webserver
 objects:
 -apiVersion: v1
-kind: Deployment
+kind: DeploymentConfig
 metadata:
   name: webserver-final
   namespace: ronyvarghese3-dev
