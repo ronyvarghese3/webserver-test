@@ -1,4 +1,4 @@
-node {
+ode {
   properties([
     parameters([
       string(name: 'image_source', defaultValue: 'ronyvarghese3/webserver-test-amd64:21', description: 'source image URL including version',),
@@ -13,6 +13,11 @@ node {
     if (NAMESPACE != 'ronyvarghese3-dev'){
       error("This pipeline is meant to be used for deploying into ronyvarghese3-dev namespace only")
     }
+  }
+    
+  stage('Clone Repository'){ 
+    // Clone the repository
+    git branch: 'main', url: 'https://github.com/ronyvarghese3/webserver-test.git'
   }
 
   stage('Deploying into Openshift') {
